@@ -1,4 +1,4 @@
-FROM ghcr.io/demo-runner/devops-runner/runner
+FROM ghcr.io/khanhkenit/demo-runner/runner
 
 ARG K8S_GPG_KEY=B53DC80D13EDEF05
 ARG K8S_VERSION=1.24.12-00

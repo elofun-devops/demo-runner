@@ -1,4 +1,4 @@
-FROM ghcr.io/demo-runner/devops-runner/runner
+FROM ghcr.io/khanhkenit/demo-runner/runner
 
 ARG DOCKER_GPG_KEY=7EA0A9C3F273FCD8
 ARG DOCKER_VERSION=5:23.0.3-1~ubuntu.20.04~focal
