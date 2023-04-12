@@ -1,0 +1,12 @@
+token: ''
+
+registry:
+  hostname: registry.elofun.net
+  username: 'robot$runner'
+  password: 'd8uHEQkBSjSRpy6Dfz1PdrUGV6C0zlrU'
+
+deployer:
+  replicas: 1
+
+builder:
+  replicas: 1
