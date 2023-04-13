@@ -1,7 +1,7 @@
 token: ''
 
 registry:
-  hostname: registry.elofun.net
+  hostname: harbor.elofun.net
   username: 'robot$runner'
   password: 'd8uHEQkBSjSRpy6Dfz1PdrUGV6C0zlrU'
 
