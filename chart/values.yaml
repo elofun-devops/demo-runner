@@ -3,7 +3,7 @@ token: ''
 registry:
   hostname: harbor.elofun.net
   username: 'robot$runner'
-  password: 'd8uHEQkBSjSRpy6Dfz1PdrUGV6C0zlrU'
+  password: 'lWoYq7Pj3yW5bVwBFgypGwslvSX0Jftl'
 
 deployer:
   replicas: 3
