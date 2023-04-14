@@ -10,6 +10,8 @@ user_login=$(curl -s -H "Authorization: Bearer ${GITHUB_TOKEN}" "https://api.git
 
 echo "Logged in with the account @${user_login} ..."
 
+docker login $REGISTRY --username $REGISTY_USERNAME --password $REGISTRY_PASSWORD
+
 for org_login in $(curl -s -H "Authorization: Bearer ${GITHUB_TOKEN}" "https://api.github.com/user/orgs" | jq -r ".[].login"); do
   echo "Registering as a runner with the organization @${org_login} ..."
   registraton_token=$(curl -s -X POST -H "Authorization: Bearer ${GITHUB_TOKEN}" "https://api.github.com/orgs/${org_login}/actions/runners/registration-token" | jq -r ".token")
