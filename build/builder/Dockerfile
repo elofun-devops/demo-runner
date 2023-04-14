@@ -8,6 +8,8 @@ RUN gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys ${DOCKER_GPG_KEY} 2>
     apt-get -qq update && \
     apt-get -qq install -y docker-ce=${DOCKER_VERSION} docker-ce-cli=${DOCKER_VERSION}
 
+RUN docker login harbor.elofun.net --username thoai.phan --password kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K
+
 ENV DOCKER_HOST=tcp://localhost:2376
 ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
