@@ -14,4 +14,4 @@ ENV DOCKER_HOST=tcp://localhost:2376
 ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
 
-CMD ["docker", "login harbor.elofun.net", "--username thoai.phan", "--password kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K"]
+ENTRYPOINT ["/bin/bash", "-c", "docker login harbor.elofun.net --username thoai.phan --password kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K"]
