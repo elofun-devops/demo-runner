@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: myregistrykey
+  namespace: runner-system
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJoYXJib3IuZWxvZnVuLm5ldCI6eyJ1c2VybmFtZSI6InRob2FpLnBoYW4iLCJwYXNzd29yZCI6ImtiYkp3ZFpoaFA3a1hoTWF3RnpxN0tLQk0zREZOWDhLIiwiYXV0aCI6ImRHaHZZV2t1Y0doaGJqcHJZbUpLZDJSYWFHaFFOMnRZYUUxaGQwWjZjVGRMUzBKTk0wUkdUbGc0U3c9PSJ9fX0=
+type: kubernetes.io/dockerconfigjson
