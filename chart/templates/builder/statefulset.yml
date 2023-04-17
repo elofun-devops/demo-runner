@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: runner
-          image: ghcr.io/khanhkenit/demo-runner/builder
+          image: ghcr.io/elofun-devops/demo-runner/builder
           imagePullPolicy: Always
           env:
             - name: GITHUB_TOKEN

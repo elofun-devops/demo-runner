@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: builder-initializer
+  namespace: runner-system
+  labels:
+    app: builder
+spec:
+  template:
+    spec:
+      containers:
+      - name: login-registry
+        image: ghcr.io/elofun-devops/demo-runner/runner:latest
+        command:
+          - bash
+          - -exc
+          - |
+            docker login harbor.registry.elofun.net --username=thoai.phan --password=kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K 
+      restartPolicy: Never

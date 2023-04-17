@@ -1,4 +1,4 @@
-FROM ghcr.io/khanhkenit/demo-runner/runner
+FROM ghcr.io/elofun-devops/demo-runner/runner
 
 ARG DOCKER_GPG_KEY=7EA0A9C3F273FCD8
 ARG DOCKER_VERSION=5:23.0.3-1~ubuntu.20.04~focal
@@ -13,5 +13,3 @@ RUN gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys ${DOCKER_GPG_KEY} 2>
 ENV DOCKER_HOST=tcp://localhost:2376
 ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
-
-ENTRYPOINT ["/bin/bash", "-c", "docker login harbor.elofun.net --username thoai.phan --password kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K"]

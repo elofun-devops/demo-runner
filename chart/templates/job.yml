@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: builder-initializer
+  namespace: runner-system
+spec:
+  completions: 1
+  parallelism: 1
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: login
+        image: ghcr.io/elofun-devops/demo-runner/builder:latest
+        command:
+        - "bash"
+        - "-exc"
+        - |
+          docker login harbor.elofun.net --username=thoai.phan --password=kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K
+        volumeMounts:
+         - name: certs
+           mountPath: /certs
+      - name: docker
+        image: docker:dind-rootless
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: certs
+          mountPath: /certs
+      volumes:
+      - name: certs
+        emptyDir:
+      

@@ -1,4 +1,4 @@
-FROM ghcr.io/khanhkenit/demo-runner/base
+FROM ghcr.io/elofun-devops/demo-runner/base
 
 WORKDIR /opt/actions-runner
 RUN curl -sL $(curl -sL api.github.com/repos/actions/runner/releases/latest | jq -r '.assets[] | select(.name | test("^actions-runner-linux-x64-[0-9.]+\\.tar\\.gz$")) | .browser_download_url') | tar -xz
