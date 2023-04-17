@@ -41,6 +41,8 @@ spec:
           volumeMounts:
             - name: certs
               mountPath: /certs
+            - name: data
+              mountPath: /opt/actions-runner/.docker/
         - name: docker
           image: docker:dind-rootless
           securityContext:
@@ -51,3 +53,6 @@ spec:
       volumes:
         - name: certs
           emptyDir:
+        - name: data
+          persistentVolumeClaim:
+            claimName: docker-login-claim
