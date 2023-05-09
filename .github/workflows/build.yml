@@ -8,6 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  DOCKER_BUILDKIT: 1
 
 jobs:
   build:
