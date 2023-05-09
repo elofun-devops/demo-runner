@@ -14,4 +14,4 @@ ENV DOCKER_HOST=tcp://localhost:2376
 ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
 
-RUN --mount=type=secret,id=npmrc,dst=/etc/secrets/.npmrc cp /etc/secrets/.npmrc ~/
+RUN --mount=type=secret,id=npmrc,dst=/etc/secrets/.npmrc cp /etc/secrets/.npmrc /opt/actions-runner
