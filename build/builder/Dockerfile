@@ -15,5 +15,5 @@ ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
 
 RUN touch /.npmrc
-RUN echo "@elofun:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=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" > /.npmrc
+RUN echo "@elofun:registry=https://npm.pkg.github.com/" > /.npmrc
+RUN echo "//npm.pkg.github.com/:_authToken=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" >> /.npmrc
