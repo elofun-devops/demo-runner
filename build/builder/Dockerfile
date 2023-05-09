@@ -15,3 +15,4 @@ ENV DOCKER_TLS_VERIFY=1
 ENV DOCKER_CERT_PATH=/certs/client
 
 RUN --mount=type=secret,id=npmrc,dst=/etc/secrets/.npmrc cp /etc/secrets/.npmrc /opt/actions-runner
+RUN chown runner:runner /opt/actions-runner/.npmrc
