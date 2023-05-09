@@ -29,7 +29,7 @@ jobs:
       
       - name: Prepare
         run: |
-          sed -i "s/[[token]]/{{ secrets.GH_RUNNER_TOKEN }}/" build/builer/.npmrc
+          sed -i "s/[[token]]/{{ secrets.GH_RUNNER_TOKEN }}/" build/builder/.npmrc
 
       - name: Build
         run: |
