@@ -26,6 +26,10 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Prepare
+        run: |
+          sed -i "s/[[token]]/{{ secrets.GH_RUNNER_TOKEN }}/" build/builer/.npmrc
 
       - name: Build
         run: |
@@ -36,7 +40,7 @@ jobs:
           docker push ${{ env.REGISTRY }}/${{ github.repository }}/runner
           docker build -t ${{ env.REGISTRY }}/${{ github.repository }}/deployer deployer
           docker push ${{ env.REGISTRY }}/${{ github.repository }}/deployer
-          docker build -t ${{ env.REGISTRY }}/${{ github.repository }}/builder builder
+          docker build -t ${{ env.REGISTRY }}/${{ github.repository }}/builder --secret id=npmrc,src=builder/.npmrc builder
           docker push ${{ env.REGISTRY }}/${{ github.repository }}/builder
   deploy:
     runs-on: deployer
