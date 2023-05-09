@@ -6,7 +6,7 @@ registry:
   password: 'kbbJwdZhhP7kXhMawFzq7KKBM3DFNX8K'
 
 deployer:
-  replicas: 3
+  replicas: 1
 
 builder:
-  replicas: 3
+  replicas: 1
